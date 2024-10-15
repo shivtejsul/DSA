@@ -1,2 +1,2 @@
 # DSA
-This is the repository for learning DSA in C++
+This is the repository for learning DSA in C++.
