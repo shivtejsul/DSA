@@ -1,36 +1,21 @@
 #include<iostream>
 #include<string>
-#include<unordered_map>
-#include<algorithm>
 using namespace std;
 string compressedString(string word) {
- unordered_map<char,int>map;
- string result;
- int n=word.length()-1,i=0;
- for(auto i:word)
- {
-    map[i]++;
- } 
-for(auto i:word)
+ string s;
+ int n=word.length(),i=0;
+ while (i<n)
 {
-    int count=map[i];
-    if(map[i]!= 0){
-          while (count > 9) {
-                result += "9";
-                result += i;
-                count -= 9;
-            }
-      if(count > 0){ 
-    result+=to_string(count);
-    result+=i;
-    map[i]=0;
-    }    
+    int count=1;
+    while (i+count<n && word[i]==word[i+count] && count<9 )
+    {
+        count++;
     }
+    s+=to_string(count)+word[i];
+    i += count;
 }
- 
- return result;
+return s;
 }
-
 int main()
 {
     string s;
