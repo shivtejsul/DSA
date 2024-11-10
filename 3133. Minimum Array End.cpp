@@ -21,7 +21,7 @@ long minEnd(int n, int x) {
 
 int main() {
     int n1 = 3, x1 = 4;
-    int result1 = minLastElement(n1, x1);
+    int result1 = minEnd(n1, x1);
     cout << "Output for (n = 3, x = 4): " << result1 << std::endl;
 
        
